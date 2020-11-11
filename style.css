@@ -43,16 +43,14 @@ body {
 
 .doodler {
     position: absolute;
-    bottom: 0px;
-    left: 0px;
-    height: 80px;
+    height: 60px;
     width: 40px;
-    color: #ffffff;
+    background-color: rgb(37, 47, 54);
 }
 
 .platform {
     position: absolute;
     height: 20px;
     width: 60px;
-    color: green;
+    background-color: rgb(67, 128, 70);
 }

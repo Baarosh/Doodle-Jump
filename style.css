@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(57, 72, 83);
+}
+
+.header-container,
+.grid-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container {
+    width: 100%;
+    min-height: 100px;
+    height: 10vh;
+}
+.header {
+    height: 50%;
+    color: rgb(202, 221, 236);
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.grid-container {
+    height: 88vh;
+    width: 100%;
+}
+.grid {
+    width: 500px;
+    height: 80%;
+    background-color: rgb(202, 221, 236);
+    position: relative;
+}
+
+.doodler {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 80px;
+    width: 40px;
+    color: #ffffff;
+}
+
+.platform {
+    position: absolute;
+    height: 20px;
+    width: 60px;
+    color: green;
+}

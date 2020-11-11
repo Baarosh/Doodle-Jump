@@ -51,6 +51,9 @@ const movePlatforms = () => {
                         platforms.shift()
                         platform.visual.classList.remove('platform')
 
+                        score++
+                        console.log(score)
+
                         const newPlatform = new Platform(Math.random() * 420, 750)
                         platforms.push(newPlatform)
                     }
@@ -103,8 +106,6 @@ const moveDoodlerDown = () => {
                 &&  ((doodler.left + 40) >= platform.left)
                 &&  (doodler.left <= (platform.left + 120))
                 &&  !isJumping) {
-                        dscore++
-                        console.log(score)
                         moveDoodlerUp(platform.bottom + 300)
                     }
             })

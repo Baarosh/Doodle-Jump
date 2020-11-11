@@ -55,3 +55,13 @@ body {
     width: 80px;
     background-color: rgb(67, 128, 70);
 }
+
+.score {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    color: rgb(37, 47, 54);
+    font-size: 45px;
+    font-family: 'Courier New', Courier, monospace;
+    transform: translate(-50%);
+}

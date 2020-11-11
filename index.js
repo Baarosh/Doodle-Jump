@@ -47,6 +47,13 @@ const movePlatforms = () => {
                 platforms.forEach((platform) => {
                     platform.bottom -= 1
                     platform.visual.style.bottom = `${platform.bottom}px`
+                    if (platform.bottom < 10) {
+                        platforms.shift()
+                        platform.visual.classList.remove('platform')
+
+                        const newPlatform = new Platform(Math.random() * 420, 750)
+                        platforms.push(newPlatform)
+                    }
             })
             } else clearInterval(movePlatformsId)
         }, 10)
@@ -79,7 +86,15 @@ const moveDoodlerDown = () => {
                 clearInterval(moveDoodlerDownId)
                 clearInterval(moveLeftId)
                 clearInterval(moveRightId)
-                console.log('game over')
+
+                while(grid.firstChild) {
+                    grid.removeChild(grid.firstChild)
+                }
+
+                const scoreEl = document.createElement('h2')
+                scoreEl.classList.add('score')
+                scoreEl.innerText = `Score: ${score}`
+                grid.appendChild(scoreEl)
             }
 
             platforms.forEach(platform => {
@@ -88,7 +103,8 @@ const moveDoodlerDown = () => {
                 &&  ((doodler.left + 40) >= platform.left)
                 &&  (doodler.left <= (platform.left + 120))
                 &&  !isJumping) {
-                        console.log('landed')
+                        dscore++
+                        console.log(score)
                         moveDoodlerUp(platform.bottom + 300)
                     }
             })
@@ -160,6 +176,7 @@ let moveLeftId
 let moveRightId
 let isLeftJumping = false
 let isRightJumping = false
+let score = 0
 
 const doodler = new Doodler()
 
@@ -169,7 +186,7 @@ const startGame = () => {
         movePlatforms()
         doodler.refresh(platforms[0].left)
         moveDoodlerUp()
-        document.addEventListener('keyup', control)
+        document.addEventListener('keydown', control)
     }
 }
 

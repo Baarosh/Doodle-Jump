@@ -39,6 +39,7 @@ body {
     height: 80%;
     background-color: rgb(202, 221, 236);
     position: relative;
+    overflow: hidden;
 }
 
 .doodler {
@@ -51,6 +52,6 @@ body {
 .platform {
     position: absolute;
     height: 20px;
-    width: 60px;
+    width: 80px;
     background-color: rgb(67, 128, 70);
 }

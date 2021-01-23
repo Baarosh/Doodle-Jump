@@ -112,7 +112,7 @@ const moveDoodlerDown = () => {
     }, 10)
 }
 
-    const moveLeft = () => {
+const moveLeft = () => {
     if(isRightJumping) {
         clearInterval(moveRightId)
         isRightJumping = false
@@ -129,7 +129,8 @@ const moveDoodlerDown = () => {
             } else clearInterval(moveLeftId)
             }, 10)
     }
-    }
+}
+
 const moveRight = () => {
     if(isLeftJumping) {
         clearInterval(moveLeftId)
